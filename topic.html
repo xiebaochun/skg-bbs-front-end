@@ -28,11 +28,12 @@
         /*sidebar样式 byxiebaochun 2015-07-31 */
         .sidebar{float:right;width:250px;line-height: 25px;}
         .sidebar .sidebar_list .siderbar_item{display:block;font-size:15px;}
-        .siderbar_item + .siderbar_item{border-top: 1px solid #e7e7e7;margin-top: 15px;padding-top: 15px;}
+        .siderbar_item + .siderbar_item{border-top: 1px solid #d2d2d2;margin-top: 15px;padding-top: 15px;}
         .sidebar .sidebar_list .siderbar_item:hover{cursor: pointer;}
         .siderbar_item_title{color:#999999;}
         #publish_topic_bt{height:55px;background-color: #fff;background-position:-365px -32px;}
         #publish_topic_bt:hover{background-position:-365px -88px;}
+        #hot_topic_recommend{border-top:none;}
 
         /*
          * 话题列表样式 
@@ -49,6 +50,8 @@
         .topic_title{font-size: 13px;font-weight: 700;}
         .topic_title_wraper > span{font-size:12px;color:#999999;}
         .topic_abstract{color:#999999;clear: both;}
+        .topic_abstract img{float:left;max-width:730px;margin-right: 10px;}
+        .topic_author{color:#666666 !important;}
         .essence_icon{width:20px;height:17px;background-position: -33px -244px;}
         .top_set_icon{width:31px;height:17px;background-position: -33px -271px;}
         #usersection{display:none;}
@@ -58,7 +61,7 @@
          * 用户列表样式 
          * @Author : xiebaochun 2015-07-30
          */
-        .user_item{padding:20px 0;border-bottom:1px dashed #dddddd;}
+        .user_item{padding:20px 0;border-bottom:1px solid #e6e6e6;}
         .user_avatar{float:left;}
         .user_avatar img{width:40px;height:40px;border-radius: 20px;}
         .user_info_wraper{float:left;height:40px;padding-left:10px;line-height: 20px;}
@@ -83,7 +86,7 @@
         <div class="sidebar">     
             <div class="sidebar_list"> 
                 <a class="siderbar_item css_sprite" id="publish_topic_bt"><!-- 发布帖子 --></a>
-                <div class="siderbar_item">
+                <div class="siderbar_item" id="hot_topic_recommend">
                     <h4 class="siderbar_item_title">热贴推荐</h4>
                     <ul class="siderbar_item_list">
                         <li><a href="">烘焙属它妙用无穷：基础奶油霜</a></li>
@@ -145,7 +148,7 @@
                 </div>
                 <div class="inner mt10">
                     <ul class="topic_list">
-                        <li class="topic_item">
+                        <li class="topic_item clearfix">
                             <div class="topic_title_wraper">
                                 <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a><span class="css_sprite essence_icon"></span>&nbsp<span class="css_sprite top_set_icon"></span>
                                 <br>
@@ -153,15 +156,15 @@
                             </div>
                             <p class="topic_abstract"></p>
                         </li>
-                        <li class="topic_item">
+                        <li class="topic_item clearfix">
                             <div class="topic_title_wraper">
                                 <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a><span class="css_sprite essence_icon"></span>
                                 <br>
                                <span class="topic_author fl">顔小-yAnyo</span><span class="fl ml30">精华</span><span class="public_date fr">3秒前</span><span class="reply_read fr mr50">600/1000</span>
                             </div>
-                            <p class="topic_abstract"><img src="./img/product_01.png">&nbsp&nbsp<img src="./img/product_02.png">&nbsp&nbsp<img src="./img/product_03.png"></p>
+                            <p class="topic_abstract"><img src="./img/product_01.png"><img src="./img/product_02.png"><img src="./img/product_03.png"></p>
                         </li>
-                        <li class="topic_item">
+                        <li class="topic_item clearfix">
                             <div class="topic_title_wraper">
                                 <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a><span class="css_sprite essence_icon"></span>
                                 <br>
@@ -169,7 +172,7 @@
                             </div>
                             <p class="topic_abstract"></p>
                         </li>
-                        <li class="topic_item">
+                        <li class="topic_item clearfix">
                             <div class="topic_title_wraper">
                                 <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a><span class="css_sprite essence_icon"></span>
                                 <br>
@@ -177,7 +180,7 @@
                             </div>
                             <p class="topic_abstract"><img src="./img/product_04.png"></p>
                         </li>
-                        <li class="topic_item">
+                        <li class="topic_item clearfix">
                             <div class="topic_title_wraper">
                                 <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a><span class="css_sprite essence_icon"></span>
                                 <br>
@@ -185,7 +188,7 @@
                             </div>
                             <p class="topic_abstract"></p>
                         </li>
-                        <li class="topic_item">
+                        <li class="topic_item clearfix">
                             <div class="topic_title_wraper">
                                 <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a><span class="css_sprite essence_icon"></span>
                                 <br>
