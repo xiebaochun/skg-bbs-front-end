@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>skg社区</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="./styles/common.css">
+    <style type="text/css">
+        /*
+         * 全局样式 
+         * @Author : xiebaochun 2015-07-30
+         */
+        body{background-color: #f8f8f8;}
+        .color_red{color:#c11;}
+        .sidebar{float:left;width:250px;}
+        .sidebar .sidebar_list .siderbar_item{display:block;height:60px;background-color: #fff;line-height:60px;font-size:15px;text-align: center;}
+        .siderbar_item + .siderbar_item{border-top: 1px solid #e7e7e7;}
+        .sidebar .sidebar_list .siderbar_item:hover{cursor: pointer;}
+        .content{float:right;width:730px;background-color: #fff;}
+        .content .panel{margin:22px 22px 0 22px;}
+        /*li:hover{background-color: #f7f7f7;}*/
+        /*
+         * 话题列表样式 
+         * @Author : xiebaochun 2015-07-30
+         */
+        .content .panel .header{height:45px;text-align: right;border-bottom: 1px solid #dddddd;}
+        .content .panel .header .select{width:85px;height:25px;}
+        .content .panel .header .select option{height:25px;line-height: 25px;}
+        .topic_item{padding:10px 0 10px 0;line-height:25px;border-bottom:1px dashed #dddddd;}
+        .topic_title{font-size: 13px;font-weight: 700;}
+        .topic_title_wraper > span{float:right;margin-left:30px;font-size:12px;color:#999999;}
+        .topic_abstract{color:#999999;}
+        #usersection{}
+        #topic_section{display:none;}
+
+        /*
+         * 用户列表样式 
+         * @Author : xiebaochun 2015-07-30
+         */
+        .user_item{padding:20px 0;border-bottom:1px dashed #dddddd;}
+        .user_avatar{float:left;}
+        .user_avatar img{width:40px;height:40px;border-radius: 20px;}
+        .user_info_wraper{float:left;height:40px;padding-left:10px;line-height: 20px;}
+        .user_info_wraper .user_name{font-size: 15px;font-weight: 700;color:#333333;}
+        .user_info_wraper .user_more_info{color:#999999;}
+        .user_info_wraper .user_more_info span{margin-right: 30px;}
+        .follow_bt{float:right;width:80px;height:32px;background-color: #bbbbbb;line-height:32px;text-align: center;font-size:15px;color:#fff;border-radius: 5px;}
+        .follow_bt:hover{background-color:#c11;color:#fff;}
+
+    </style>
+</head>
+<body> 
+    <div class="w mt20 clearfix" id="main">
+        <div class="sidebar">
+            <div class="sidebar_list">
+                <a class="siderbar_item" id="topic">帖子</a>
+                <a class="siderbar_item" id="user">用户</a>    
+            </div>
+        </div>
+        <!-- 右侧话题列表 by xiebaochun 2015-07-30 -->
+        <div class="content" id="topic_section">
+            <div class="panel">
+                <div class="header">
+                    <select class="select" id="time_select">
+                        <option value ="一年内">一年内</option>
+                        <option value ="两年内">两年内</option>
+                        <option value="三年内">三年内</option>
+                    </select>&nbsp&nbsp&nbsp
+                    <select class="select" id="cate_select">
+                        <option value ="所有">所有</option>
+                        <option value ="榨汁机">榨汁机</option>
+                        <option value="烘焙">烘焙</option>
+                    </select>
+                </div>
+                <div class="inner mt10">
+                    <ul class="topic_list">
+                        <li class="topic_item">
+                            <div class="topic_title_wraper">
+                                <span class="public_date">7-30</span><span class="cate_name">板块名称</span><span class="topic_author">我是作者</span>
+                                <a class="topic_title" href="#">SKG<span class="color_red">榨汁机</span>终极Boss大战 等你来赢！ 你做任务！ 我送钱！</a>
+                            </div>
+                            <p class="topic_abstract">你做任务！我送钱！skg壕老板放话，只需完成2个超简单关卡，<span class="color_red">榨汁机</span>随你挑！如此给（tu）力（hao）真是吓死宝宝了！吓死..</p>
+                        </li>
+                        <li class="topic_item">
+                            <div class="topic_title_wraper">
+                                <span class="public_date">7-30</span><span class="cate_name">板块名称</span><span class="topic_author">我是作者</span>
+                                <a class="topic_title" href="#">SKG<span class="color_red">榨汁机</span>终极Boss大战 等你来赢！ 你做任务！ 我送钱！</a>
+                            </div>
+                            <p class="topic_abstract">你做任务！我送钱！skg壕老板放话，只需完成2个超简单关卡，<span class="color_red">榨汁机</span>随你挑！如此给（tu）力（hao）真是吓死宝宝了！吓死..</p>
+                        </li>
+                        <li class="topic_item">
+                            <div class="topic_title_wraper">
+                                <span class="public_date">7-30</span><span class="cate_name">板块名称</span><span class="topic_author">我是作者</span>
+                                <a class="topic_title" href="#">SKG<span class="color_red">榨汁机</span>终极Boss大战 等你来赢！ 你做任务！ 我送钱！</a>
+                            </div>
+                            <p class="topic_abstract">你做任务！我送钱！skg壕老板放话，只需完成2个超简单关卡，<span class="color_red">榨汁机</span>随你挑！如此给（tu）力（hao）真是吓死宝宝了！吓死..</p>
+                        </li>
+                    </ul>
+                    <p class="data_page mt20 mb20">
+                        <span class="page_prev page_disabled">
+                            <a href="#">上一页</a>
+                        </span>
+
+                        <span class="page_current">
+                            <a href="javascript:;">1</a>
+                        </span>
+                        <span>
+                            <a href="javascript:toPage(2);">2</a>
+                        </span>
+                        <span>
+                            <a href="javascript:toPage(3);">3</a>
+                        </span>
+                        <span>
+                            <a href="javascript:toPage(4);">4</a>
+                        </span>
+                        <span class="page_next">
+                            <a href="javascript:toPage(2);">下一页</a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+         <!-- 右侧用户列表 by xiebaochun 2015-07-30 -->
+        <div class="content" id="usersection">
+            <div class="panel">       
+                <div class="inner">
+                    <ul class="user_list">
+                        <li class="user_item clearfix">
+                            <a class="user_avatar" href=""><img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
+                            <div class="user_info_wraper">
+                                <a href="" class="user_name"><span class="color_red">skg</span>-小红</a>
+                                <div class="user_more_info">
+                                    <span>粉丝 999+</span>
+                                    <span>帖子 999+</span>
+                                </div>
+                            </div>
+                            <a class="follow_bt" href="">关注</a>
+                        </li>
+                        <li class="user_item clearfix">
+                            <a class="user_avatar" href=""><img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F2351869%3Fv%3D3%26s%3D120"></a>
+                            <div class="user_info_wraper">
+                                <a href=""  class="user_name"><span class="color_red">skg</span>-小红</a>
+                                <div class="user_more_info">
+                                    <span>粉丝 999+</span>
+                                    <span>帖子 999+</span>
+                                </div>
+                            </div>
+                            <a class="follow_bt" href="">关注</a>
+                        </li>
+                        <li class="user_item clearfix">
+                            <a class="user_avatar" href=""><img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
+                            <div class="user_info_wraper">
+                                <a href="" class="user_name"><span class="color_red">skg</span>-小红</a>
+                                <div class="user_more_info">
+                                    <span>粉丝 999+</span>
+                                    <span>帖子 999+</span>
+                                </div>
+                            </div>
+                            <a class="follow_bt" href="">关注</a>
+                        </li>
+                    </ul>
+                </div>
+                <p class="data_page mt20 mb20">
+                    <span class="page_prev page_disabled">
+                        <a href="#">上一页</a>
+                    </span>
+
+                    <span class="page_current">
+                        <a href="javascript:;">1</a>
+                    </span>
+                    <span>
+                        <a href="javascript:toPage(2);">2</a>
+                    </span>
+                    <span>
+                        <a href="javascript:toPage(3);">3</a>
+                    </span>
+                    <span>
+                        <a href="javascript:toPage(4);">4</a>
+                    </span>
+                    <span class="page_next">
+                        <a href="javascript:toPage(2);">下一页</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
