@@ -6,74 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="keywords" content="国外生活">
     <meta name="description" content="">
-    <link rel="stylesheet" type="text/css" href="./styles/common.css">
-    <style type="text/css">
-        /*
-         * 全局样式 
-         * @Author : xiebaochun 2015-07-30
-         */
-        body{background-color: #f8f8f8;}
-        .color_red{color:#c11;}
-        .css_sprite{display:inline-block;min-width:20px;min-height:16px;background-image: url("./img/skgicon.png");}
-        /*li:hover{background-color: #f7f7f7;}*/
-
-
-        /*banner样式 by xiebaochun 2015-07-31*/
-        .banner{position:relative;background-color: #fff;margin-bottom:20px;}
-        .banner .banner_img{display:block;width:100%;height:180px;}
-        .banner .banner_title{height:90px;padding:10px 0 0 170px;line-height: 40px;color:#101010;}
-        .banner_logo{position: absolute;left: 20px;bottom:20px;}
-        .banner_title_des{color:#666;}
-
-        /*sidebar样式 byxiebaochun 2015-07-31 */
-        .sidebar{float:right;width:250px;line-height: 25px;}
-        .sidebar .sidebar_list .siderbar_item{display:block;font-size:15px;}
-        .siderbar_item + .siderbar_item{border-top: 1px solid #d2d2d2;margin-top: 15px;padding-top: 15px;}
-        .sidebar .sidebar_list .siderbar_item:hover{cursor: pointer;}
-        .siderbar_item_title{color:#999999;}
-        #publish_topic_bt{height:55px;background-color: #fff;background-position:-365px -32px;}
-        #publish_topic_bt:hover{background-position:-365px -88px;}
-        #hot_topic_recommend{border-top:none;}
-
-        /*
-         * 话题列表样式 
-         * @Author : xiebaochun 2015-07-30
-         */
-        .content{float:left;width:730px;background-color: #fff;}
-        .content .panel{margin:22px 22px 0 22px;}
-        .content .panel .header{position:relative;height:30px;border-bottom: 1px solid #eee5e5;}
-        .topic_tab{position: absolute;bottom: -1px;}
-        .topic_tab li{float:left;width:80px;height:28px;background-color:#f6f6f6;line-height:28px;margin-right:4px;text-align:center;color:#666666;border:1px solid #eee5e5;}
-        .topic_tab li:hover{cursor:pointer;}
-        .topic_tab_current{background-color: #fff !important;border-bottom: 1px solid #fff !important;}
-        .topic_item{padding:10px 0 10px 0;line-height:25px;border-bottom:1px dashed #dddddd;}
-        .topic_title{font-size: 13px;font-weight: 700;}
-        .topic_title_wraper > span{font-size:12px;color:#999999;}
-        .topic_abstract{color:#999999;clear: both;}
-        .topic_abstract img{float:left;max-width:730px;margin-right: 10px;}
-        .topic_author{color:#666666 !important;}
-        .essence_icon{width:20px;height:17px;background-position: -33px -244px;}
-        .top_set_icon{width:31px;height:17px;background-position: -33px -271px;}
-        #usersection{display:none;}
-        #topic_section{}
-
-        /*
-         * 用户列表样式 
-         * @Author : xiebaochun 2015-07-30
-         */
-        .user_item{padding:20px 0;border-bottom:1px solid #e6e6e6;}
-        .user_avatar{float:left;}
-        .user_avatar img{width:40px;height:40px;border-radius: 20px;}
-        .user_info_wraper{float:left;height:40px;padding-left:10px;line-height: 20px;}
-        .user_info_wraper .user_name{font-size: 15px;font-weight: 700;color:#333333;}
-        .user_info_wraper .user_more_info{color:#999999;}
-        .user_info_wraper .user_more_info span{margin-right: 30px;}
-        .follow_bt{float:right;line-height:32px;text-align: center;font-size:15px;color:#666666;border-radius: 5px;}
-        .follow_bt:hover{color:#c11;}
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="./styles/common.css?v2015080301">
+    <link rel="stylesheet" type="text/css" href="./styles/topic.css?v2015080301">
+    <script type="text/javascript" src="./scripts/jquery.js?v2015080301"></script>
+    <script type="text/javascript" src="./scripts/switchable.js?v2015080301"></script>
+    <script type="text/javascript" src="./scripts/topic.js?v2015080301"></script>
 </head>
-<body> 
+<body>
     <div class="w mt20 clearfix" id="main">
         <div class="banner clearfix">
             <img class="banner_img" src="./img/banner_img.jpg"/>
@@ -83,26 +22,41 @@
                 <h5 class="banner_title_des">SKG集团是一家致力于为全球消费者提供个人化精品体验的跨国电商集团，是中国互联网家电第一品牌。</h5>
             </div>
         </div>
-        <div class="sidebar">     
-            <div class="sidebar_list"> 
-                <a class="siderbar_item css_sprite" id="publish_topic_bt"><!-- 发布帖子 --></a>
+        <div class="sidebar">
+            <div class="sidebar_list">
+                <a class="siderbar_item css_sprite" id="publish_topic_bt">
+                    <!-- 发布帖子 --> </a>
                 <div class="siderbar_item" id="hot_topic_recommend">
                     <h4 class="siderbar_item_title">热贴推荐</h4>
                     <ul class="siderbar_item_list">
-                        <li><a href="">烘焙属它妙用无穷：基础奶油霜</a></li>
-                        <li><a href="">说说烘焙里常用的那些糖</a></li>
-                        <li><a href="">烘焙里的添加剂有哪些？</a></li>
-                        <li><a href="">各种烘焙工具的使用方法</a></li>
-                        <li><a href="">面包烘焙,蛋糕配料不当引发问题...</a></li>
+                        <li>
+                            <a href="">烘焙属它妙用无穷：基础奶油霜</a>
+                        </li>
+                        <li>
+                            <a href="">说说烘焙里常用的那些糖</a>
+                        </li>
+                        <li>
+                            <a href="">烘焙里的添加剂有哪些？</a>
+                        </li>
+                        <li>
+                            <a href="">各种烘焙工具的使用方法</a>
+                        </li>
+                        <li>
+                            <a href="">面包烘焙,蛋糕配料不当引发问题...</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="siderbar_item">
                     <h4 class="siderbar_item_title">推荐用户</h4>
                     <ul class="siderbar_item_list">
                         <li class="user_item clearfix">
-                            <a class="user_avatar" href=""><img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
+                            <a class="user_avatar" href="">
+                                <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
                             <div class="user_info_wraper">
-                                <a href="" class="user_name"><span class="color_red">skg</span>-小红</a>
+                                <a href="" class="user_name">
+                                    <span class="color_red">skg</span>
+                                    -小红
+                                </a>
                                 <div class="user_more_info">
                                     <span>个人简介</span>
                                 </div>
@@ -110,9 +64,13 @@
                             <a class="follow_bt" href="">关注</a>
                         </li>
                         <li class="user_item clearfix">
-                            <a class="user_avatar" href=""><img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
+                            <a class="user_avatar" href="">
+                                <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
                             <div class="user_info_wraper">
-                                <a href="" class="user_name"><span class="color_red">skg</span>-小红</a>
+                                <a href="" class="user_name">
+                                    <span class="color_red">skg</span>
+                                    -小红
+                                </a>
                                 <div class="user_more_info">
                                     <span>个人简介</span>
                                 </div>
@@ -120,9 +78,13 @@
                             <a class="follow_bt" href="">关注</a>
                         </li>
                         <li class="user_item clearfix">
-                            <a class="user_avatar" href=""><img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
+                            <a class="user_avatar" href="">
+                                <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
                             <div class="user_info_wraper">
-                                <a href="" class="user_name"><span class="color_red">skg</span>-小红</a>
+                                <a href="" class="user_name">
+                                    <span class="color_red">skg</span>
+                                    -小红
+                                </a>
                                 <div class="user_more_info">
                                     <span>个人简介</span>
                                 </div>
@@ -150,68 +112,106 @@
                     <ul class="topic_list">
                         <li class="topic_item clearfix">
                             <div class="topic_title_wraper">
-                                <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a><span class="css_sprite essence_icon"></span>&nbsp<span class="css_sprite top_set_icon"></span>
+                                <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a>
+                                <span class="css_sprite essence_icon"></span>
+                                &nbsp
+                                <span class="css_sprite top_set_icon"></span>
                                 <br>
-                               <span class="topic_author fl">顔小-yAnyo</span><span class="fl ml30">精华</span><span class="public_date fr">3秒前</span><span class="reply_read fr mr50">600/1000</span>
+                                <span class="topic_author fl">顔小-yAnyo</span>
+                                <span class="fl ml30">精华</span>
+                                <span class="public_date fr">3秒前</span>
+                                <span class="reply_read fr mr50">600/1000</span>
                             </div>
-                            <p class="topic_abstract"></p>
                         </li>
                         <li class="topic_item clearfix">
                             <div class="topic_title_wraper">
-                                <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a><span class="css_sprite essence_icon"></span>
+                                <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a>
+                                <span class="css_sprite essence_icon"></span>
                                 <br>
-                               <span class="topic_author fl">顔小-yAnyo</span><span class="fl ml30">精华</span><span class="public_date fr">3秒前</span><span class="reply_read fr mr50">600/1000</span>
+                                <span class="topic_author fl">顔小-yAnyo</span>
+                                <span class="fl ml30">精华</span>
+                                <span class="public_date fr">3秒前</span>
+                                <span class="reply_read fr mr50">600/1000</span>
                             </div>
-                            <p class="topic_abstract"><img src="./img/product_01.png"><img src="./img/product_02.png"><img src="./img/product_03.png"></p>
+                            <div class="topic_abstract">
+                                <img src="./img/product_01.png">
+                                <img src="./img/product_02.png">
+                                <img src="./img/product_03.png">
+                                <div class="g_slide" id="slides">
+                                    <div class="switch_main">
+                                        <div class="item switch_item"><img data-src="./img/product_01.png"/></div>
+                                        <div class="item switch_item"><img data-src="./img/product_02.png"/></div>
+                                        <div class="item switch_item"><img data-src="./img/product_03.png"/></div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </li>
                         <li class="topic_item clearfix">
                             <div class="topic_title_wraper">
-                                <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a><span class="css_sprite essence_icon"></span>
+                                <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a>
+                                <span class="css_sprite essence_icon"></span>
                                 <br>
-                               <span class="topic_author fl">顔小-yAnyo</span><span class="fl ml30">精华</span><span class="public_date fr">3秒前</span><span class="reply_read fr mr50">600/1000</span>
+                                <span class="topic_author fl">顔小-yAnyo</span>
+                                <span class="fl ml30">精华</span>
+                                <span class="public_date fr">3秒前</span>
+                                <span class="reply_read fr mr50">600/1000</span>
                             </div>
-                            <p class="topic_abstract"></p>
                         </li>
                         <li class="topic_item clearfix">
                             <div class="topic_title_wraper">
-                                <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a><span class="css_sprite essence_icon"></span>
+                                <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a>
+                                <span class="css_sprite essence_icon"></span>
                                 <br>
-                               <span class="topic_author fl">顔小-yAnyo</span><span class="fl ml30">精华</span><span class="public_date fr">3秒前</span><span class="reply_read fr mr50">600/1000</span>
+                                <span class="topic_author fl">顔小-yAnyo</span>
+                                <span class="fl ml30">精华</span>
+                                <span class="public_date fr">3秒前</span>
+                                <span class="reply_read fr mr50">600/1000</span>
                             </div>
                             <p class="topic_abstract"><img src="./img/product_04.png"></p>
                         </li>
                         <li class="topic_item clearfix">
                             <div class="topic_title_wraper">
-                                <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a><span class="css_sprite essence_icon"></span>
+                                <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a>
+                                <span class="css_sprite essence_icon"></span>
                                 <br>
-                               <span class="topic_author fl">顔小-yAnyo</span><span class="fl ml30">精华</span><span class="public_date fr">3秒前</span><span class="reply_read fr mr50">600/1000</span>
+                                <span class="topic_author fl">顔小-yAnyo</span>
+                                <span class="fl ml30">精华</span>
+                                <span class="public_date fr">3秒前</span>
+                                <span class="reply_read fr mr50">600/1000</span>
                             </div>
-                            <p class="topic_abstract"></p>
                         </li>
                         <li class="topic_item clearfix">
                             <div class="topic_title_wraper">
-                                <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a><span class="css_sprite essence_icon"></span>
+                                <a class="topic_title" href="#">SKG终极Boss大战 等你来赢！你做任务！我送钱！</a>
+                                <span class="css_sprite essence_icon"></span>
                                 <br>
-                               <span class="topic_author fl">顔小-yAnyo</span><span class="fl ml30">精华</span><span class="public_date fr">3秒前</span><span class="reply_read fr mr50">600/1000</span>
+                                <span class="topic_author fl">顔小-yAnyo</span>
+                                <span class="fl ml30">精华</span>
+                                <span class="public_date fr">3秒前</span>
+                                <span class="reply_read fr mr50">600/1000</span>
                             </div>
-                            <p class="topic_abstract"></p>
                         </li>
                     </ul>
-                    <p class="data_page mt20 mb20">     
-                        <a href="#">加载更多</a>            
+                    <p class="data_page mt20 mb20">
+                        <a href="#">加载更多</a>
                     </p>
                 </div>
             </div>
         </div>
-         <!-- 右侧用户列表 by xiebaochun 2015-07-30 -->
+        <!-- 右侧用户列表 by xiebaochun 2015-07-30 -->
         <div class="content" id="usersection">
-            <div class="panel">       
+            <div class="panel">
                 <div class="inner">
                     <ul class="user_list">
                         <li class="user_item clearfix">
-                            <a class="user_avatar" href=""><img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
+                            <a class="user_avatar" href="">
+                                <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
                             <div class="user_info_wraper">
-                                <a href="" class="user_name"><span class="color_red">skg</span>-小红</a>
+                                <a href="" class="user_name">
+                                    <span class="color_red">skg</span>
+                                    -小红
+                                </a>
                                 <div class="user_more_info">
                                     <span>粉丝 999+</span>
                                     <span>帖子 999+</span>
@@ -220,9 +220,13 @@
                             <a class="follow_bt" href="">关注</a>
                         </li>
                         <li class="user_item clearfix">
-                            <a class="user_avatar" href=""><img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F2351869%3Fv%3D3%26s%3D120"></a>
+                            <a class="user_avatar" href="">
+                                <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F2351869%3Fv%3D3%26s%3D120"></a>
                             <div class="user_info_wraper">
-                                <a href=""  class="user_name"><span class="color_red">skg</span>-小红</a>
+                                <a href=""  class="user_name">
+                                    <span class="color_red">skg</span>
+                                    -小红
+                                </a>
                                 <div class="user_more_info">
                                     <span>粉丝 999+</span>
                                     <span>帖子 999+</span>
@@ -231,9 +235,13 @@
                             <a class="follow_bt" href="">关注</a>
                         </li>
                         <li class="user_item clearfix">
-                            <a class="user_avatar" href=""><img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
+                            <a class="user_avatar" href="">
+                                <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
                             <div class="user_info_wraper">
-                                <a href="" class="user_name"><span class="color_red">skg</span>-小红</a>
+                                <a href="" class="user_name">
+                                    <span class="color_red">skg</span>
+                                    -小红
+                                </a>
                                 <div class="user_more_info">
                                     <span>粉丝 999+</span>
                                     <span>帖子 999+</span>

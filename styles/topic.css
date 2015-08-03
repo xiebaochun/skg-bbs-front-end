@@ -1,0 +1,153 @@
+/*
+ * 全局样式 
+ * @Author : xiebaochun 2015-07-30
+ */
+body{background-color: #f8f8f8;}
+.color_red{color:#c11;}
+.css_sprite{display:inline-block;min-width:20px;min-height:16px;background-image: url("../img/skgicon.png");}
+/*li:hover{background-color: #f7f7f7;}*/
+
+
+/*banner样式 by xiebaochun 2015-07-31*/
+.banner{position:relative;background-color: #fff;margin-bottom:20px;}
+.banner .banner_img{display:block;width:100%;height:180px;}
+.banner .banner_title{height:90px;padding:10px 0 0 170px;line-height: 40px;color:#101010;}
+.banner_logo{position: absolute;left: 20px;bottom:20px;}
+.banner_title_des{color:#666;}
+
+/*sidebar样式 byxiebaochun 2015-07-31 */
+.sidebar{float:right;width:250px;line-height: 25px;}
+.sidebar .sidebar_list .siderbar_item{display:block;font-size:15px;}
+.siderbar_item + .siderbar_item{border-top: 1px solid #d2d2d2;margin-top: 15px;padding-top: 15px;}
+.sidebar .sidebar_list .siderbar_item:hover{cursor: pointer;}
+.siderbar_item_title{color:#999999;}
+#publish_topic_bt{height:55px;background-color: #fff;background-position:-365px -32px;}
+#publish_topic_bt:hover{background-position:-365px -88px;}
+#hot_topic_recommend{border-top:none;}
+
+/*
+ * 话题列表样式 
+ * @Author : xiebaochun 2015-07-30
+ */
+.content{float:left;width:730px;background-color: #fff;}
+.content .panel{margin:22px 22px 0 22px;}
+.content .panel .header{position:relative;height:30px;border-bottom: 1px solid #eee5e5;}
+.topic_tab{position: absolute;bottom: -1px;}
+.topic_tab li{float:left;width:80px;height:28px;background-color:#f6f6f6;line-height:28px;margin-right:4px;text-align:center;color:#666666;border:1px solid #eee5e5;}
+.topic_tab li:hover{cursor:pointer;}
+.topic_tab_current{background-color: #fff !important;border-bottom: 1px solid #fff !important;}
+.topic_item{padding:10px 0 10px 0;line-height:25px;border-bottom:1px dashed #dddddd;}
+.topic_title{font-size: 13px;font-weight: 700;}
+.topic_title_wraper > span{font-size:12px;color:#999999;}
+.topic_abstract{height:90px;color:#999999;clear: both;}
+.topic_abstract > img{float:left;height:90px;max-width:730px;margin-right: 10px;}
+.topic_author{color:#666666 !important;}
+.essence_icon{width:20px;height:17px;background-position: -33px -244px;}
+.top_set_icon{width:31px;height:17px;background-position: -33px -271px;}
+#usersection{display:none;}
+#topic_section{}
+
+/*
+ * 用户列表样式 
+ * @Author : xiebaochun 2015-07-30
+ */
+.user_item{padding:20px 0;border-bottom:1px solid #e6e6e6;}
+.user_avatar{float:left;}
+.user_avatar img{width:40px;height:40px;border-radius: 20px;}
+.user_info_wraper{float:left;height:40px;padding-left:10px;line-height: 20px;}
+.user_info_wraper .user_name{font-size: 15px;font-weight: 700;color:#333333;}
+.user_info_wraper .user_more_info{color:#999999;}
+.user_info_wraper .user_more_info span{margin-right: 30px;}
+.follow_bt{float:right;line-height:32px;text-align: center;font-size:15px;color:#666666;border-radius: 5px;}
+.follow_bt:hover{color:#c11;}
+
+/*图片切换样式 by xiebaochun 2015-08-03*/
+.g_slide {
+    display: none;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+}
+.g_slide img,a{
+    width: 400px;
+}
+.g_slide .item {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.switch_main { position: absolute; }
+
+.g_slide .switch_nav {
+  width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  z-index: 11;
+  text-align: center;
+}
+
+.g_slide .switch_nav_item {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  width: 13px;
+  height: 13px;
+  line-height: 200px;
+  overflow: hidden;
+  font-size: 0;
+  border-radius: 100%;
+  background: #b7b7b7;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+}
+
+.g_slide .switch_nav_item:hover { text-decoration: none; }
+
+.g_slide .switch_nav_item_current { background: #eb6100; }
+
+.g_slide .prev,
+.g_slide .next {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  margin-top: -30px;
+  width: 60px;
+  height: 90px;
+  overflow: hidden;
+  background: url("../img/skgicon.png") no-repeat;
+  transition: margin-left .3s ease, margin-right .3s ease;
+}
+
+.g_slide .prev {
+  left: -60px;
+  _left: 10px;
+  background-position: -506px -363px;
+}
+
+.g_slide .next {
+  right: -60px;
+  _right: 10px;
+  background-position: -579px -363px;
+}
+
+.g_slide .prev:hover { background-position: -506px -475px; }
+
+.g_slide .next:hover { background-position: -579px -475px; }
+
+.g_slide:hover .prev { margin-left: 60px; }
+
+.g_slide:hover .next { margin-right: 60px; }
+
+.scroll {
+  position: relative;
+  width: 752px;
+  height: 117px;
+  border: solid 1px #dfdfdf;
+  overflow: hidden;
+}
+
+.switch_main { position: relative; }
+

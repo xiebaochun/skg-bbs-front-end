@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>skg社区</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="国外生活">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="./styles/common.css">
+    <style type="text/css">
+        /*
+         * 全局样式 
+         * @Author : xiebaochun 2015-07-30
+         */
+        body{background-color: #f8f8f8;}
+        .color_red{color:#c11;}
+        .css_sprite{display:inline-block;min-height:16px;background-image: url("./img/skgicon.png");}
+        /*li:hover{background-color: #f7f7f7;}*/
+
+        /*sidebar样式 byxiebaochun 2015-07-31 */
+        .sidebar{float:right;width:250px;line-height: 25px;}
+        .sidebar .sidebar_list .siderbar_item{display:block;font-size:15px;}
+        .siderbar_item + .siderbar_item{border-top: 1px solid #d2d2d2;margin-top: 15px;padding-top: 15px;}
+        .sidebar .sidebar_list .siderbar_item:hover{cursor: pointer;}
+        .siderbar_item_title{color:#999999;}
+        #publish_topic_bt{height:55px;background-color: #fff;background-position:-365px -32px;}
+        #publish_topic_bt:hover{background-position:-365px -88px;}
+        #hot_topic_recommend{border-top:none;}
+        .user_level{display:inline-block;width:32px;height:17px;background-color:#52d462;line-height:17px;font-size:14px;text-align:center;color:#fff;border-radius:2px; }
+
+        /*
+         * 话题内容 
+         * @Author : xiebaochun 2015-07-30
+         */
+        .content{float:left;width:730px;}
+        .content .panel{padding:22px 22px 30px 22px;background-color: #fff;}
+        .content .panel .header{position:relative;height:30px;border-bottom: 1px solid #eee5e5;}
+        .topic_item{padding:10px 0 10px 0;line-height:25px;border-bottom:1px dashed #dddddd;}
+        .topic_title{font-size: 18px;font-weight: 700;}
+        .topic_title_wraper > span{font-size:12px;color:#999999;}
+        .topic_content p{line-height:25px;color:#999999;font-size:14px;text-indent: 2em;}
+        .topic_content_bottom{color:#999999;}
+        .topic_content_bottom ul li{float:right;margin-left:15px;}
+        .topic_content_bottom ul li:hover{cursor: pointer;}
+        .topic_content_bottom ul li span{vertical-align: middle;}
+
+
+        .comment{font-size: 14px;color:#666666;}
+        .comment img{width: 40px;}
+        .comment_banner{padding:10px 0 30px 0;border-bottom: 1px solid #d2d2d2;}
+        .comment_banner .like{line-height: 40px;}
+        .comment_banner ul li{float:left;margin-right: 5px;line-height: 35px;font-size: 30px;color:#999999;}
+        
+        .comment_banner ul li img{width:40px;border-radius: 20px;}
+        .comment_banner ul .comment_banner_bt{float:right;width:90px;height: 35px;line-height:30px;margin-left: 18px;text-align:center;font-size:16px;color:#c11;border: 1px solid #cc1111;border-radius: 5px;}
+        .comment_banner ul .comment_banner_bt:hover{cursor:pointer;}
+        .comment_banner ul .comment_banner_bt span{vertical-align: middle;}
+
+
+         .comment_item{margin: 30px 0 10px 0;}
+         .comment_item img{border-radius: 20px;}
+         .comment_user_name div{line-height: 40px;margin-left: 10px;font-size: 14px;}
+         .comment_content{margin-left: 48px;padding-bottom:20px;border-bottom: 1px solid #d9d9d9;}
+         .reply{padding: 20px;background-color: #f5f5f5;}
+         textarea{width: 100%;border: 1px solid #dddddd;resize: none;}
+/*         .reply textarea{width: 100%;}
+         .reply_bottom textarea{width: 100%;}*/
+         .reply_bt{display:inline-block;width: 90px;height: 32px;margin-top:10px;background-color: #c11;line-height:32px;text-align:center;font-size: 16px;color: #fff;border-radius: 5px;}
+         .reply_bt:hover{cursor: pointer;}
+         .reply_check_more{}
+         .reply_icon_selector{width:100%;background-color: #eeeeee;border: 1px solid #dddddd;margin-top: -5px;}
+
+        .topic_author{color:#666666 !important;}
+        .essence_icon{width:20px;height:17px;background-position: -33px -244px;}
+        .top_set_icon{width:31px;height:17px;background-position: -33px -271px;}
+        #usersection{display:none;}
+        #topic_section{}
+
+        #collect_icon{width:17px;height:16px;margin-right:3px;line-height:35px;background-position: -56px -527px;vertical-align: middle;}
+        #like_icon{width:17px;height:15px;margin-right:3px;line-height:35px;background-position: -32px -527px;}
+        .reply_icon{width: 24px;height: 24px;margin:5px 0 3px 3px;background-position: -72px -598px;}
+        .data_page span{margin: 0;}
+        .data_page span a{background-color:#f5f5f5; color:#c11;}
+        .data_page span a:hover{background-color:#f5f5f5;color:#333;}
+        .page_current a{background-color:#f5f5f5 !important;color:#333 !important;}
+
+        #Report_icon{width:20px;height:16px;background-position: -119px -468px;vertical-align: middle;}
+        #edit_icon{width:20px;height:16px;background-position: -140px -468px;}
+        #share_icon{width:23px;height:16px;background-position: -95px -468px;}
+        /*
+         * 用户列表样式 
+         * @Author : xiebaochun 2015-07-30
+         */
+        .user_item{padding:20px 0;border-bottom:1px solid #e6e6e6;}
+        .user_avatar{float:left;}
+        .user_avatar img{width:40px;height:40px;border-radius: 20px;}
+        .user_info_wraper{float:left;height:40px;padding-left:10px;line-height: 20px;}
+        .user_info_wraper .user_name{font-size: 15px;font-weight: 700;color:#333333;}
+        .user_info_wraper .user_more_info{color:#999999;}
+        .user_info_wraper .user_more_info span{margin-right: 30px;}
+        .follow_bt{float:right;line-height:32px;text-align: center;font-size:15px;color:#c11;border-radius: 5px;}
+        .follow_bt:hover{color:#c11;}
+
+    </style>
+</head>
+<body>
+    <div class="w mt20 clearfix" id="main">
+        <div class="sidebar">
+            <div class="sidebar_list">
+                <div class="siderbar_item">
+                    <h4 class="siderbar_item_title">本帖作者</h4>
+                    <ul class="siderbar_item_list">
+                        <li class="user_item clearfix">
+                            <a class="user_avatar" href="">
+                                <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
+                            <div class="user_info_wraper">
+                                <a href="" class="user_name">
+                                    <span class="">顔小-yAnyo</span>
+                                    <span class="user_level" id="user_level">Lv.1</span>
+                                </a>
+                                <div class="user_more_info">
+                                    <span>粉丝 999+</span>
+                                </div>
+                            </div>
+                            <a class="follow_bt" href="">关注</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="siderbar_item" id="hot_topic_recommend">
+                    <h4 class="siderbar_item_title">热贴推荐</h4>
+                    <ul class="siderbar_item_list">
+                        <li>
+                            <a href="">烘焙属它妙用无穷：基础奶油霜</a>
+                        </li>
+                        <li>
+                            <a href="">说说烘焙里常用的那些糖</a>
+                        </li>
+                        <li>
+                            <a href="">烘焙里的添加剂有哪些？</a>
+                        </li>
+                        <li>
+                            <a href="">各种烘焙工具的使用方法</a>
+                        </li>
+                        <li>
+                            <a href="">面包烘焙,蛋糕配料不当引发问题...</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 右侧话题列表 by xiebaochun 2015-07-30 -->
+        <div class="content" id="topic_section">
+            <div class="panel">
+                <div class="inner mt10">
+                    <div class="topic_title_wraper clearfix">
+                        <h1 class="topic_title fl" href="#">说说烘焙里奶制品的那些事儿</h1>
+                        <span class="public_date fr">3秒前</span>
+                    </div>
+                    <div class="topic_content mt15">
+                        <p>
+                            烘焙的原料很多，不同种类的点心会需要用到不同的原料，刚接触的人往往会觉得头大。但这并不是最头疼的，最头疼的是，很多原料的名称非常类似，一不小心就会混淆，其中，奶制品表现得尤为突出。
+                        </p>
+                        <img src="./img/topic_content_img_01.png">
+                        <p>
+                            头疼事小，用错原料使辛苦制作的甜点一败涂地就事大了。如果你曾经对“奶油”、“淡奶油”、“芝士”、“奶酪”等名称感到糊涂过，请别担心，往下看看吧。
+                        </p>
+                        <div class="topic_content_bottom mt50 pb20">
+                            <ul class="clearfix">
+                                <li>
+                                    <span class="css_sprite" id="share_icon"></span>
+                                    <span>分享</span>
+                                </li>
+                                <li>
+                                    <span class="css_sprite" id="edit_icon"></span>
+                                    <span>编辑</span>
+                                </li>
+
+                                <li>
+                                    <span class="css_sprite" id="Report_icon"></span>
+                                    <span>举报</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="comment panel mt20">
+                <div class="comment_banner">
+                    <h3 class="like">456人赞过</h3>
+                    <ul class="clearfix">
+                        <li>
+                            <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></li>
+                        <li>
+                            <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></li>
+                        <li>
+                            <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></li>
+                        <li>
+                            <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></li>
+                        <li>
+                            <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></li>
+                        <li>
+                            <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></li>
+                        <li>
+                            <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></li>
+                        <li>
+                            <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></li>
+                        <li>
+                            <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></li>
+                        <li>
+                            <span>...</span>
+                        </li>
+                        <li class="comment_banner_bt">
+                            <span class="css_sprite" id="collect_icon"></span>
+                            <span class="collect_text">收藏</span>
+                        </li>
+                        <li class="comment_banner_bt">
+                            <span class="css_sprite" id="like_icon"></span>
+                            <span class="like_text">赞</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="comment_content_wraper">
+                    <ul class="comment_list">
+                        <li class="comment_item">
+                            <div class="comment_user_name clearfix">
+                                <a class="fl" href="">
+                                    <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
+                                <div class="fl">ACE-0428</div>
+                                <div class="fr">举报</div>
+                            </div>
+                            <div class="comment_content">
+                                <p>
+                                    沙发啊！！po主~~做蛋糕时里面的奶粉能换成 豆奶粉吗 ？总统牌的奶酪（小孩补钙直接吃的）能不能用来做芝士蛋糕？？？？？？？？？？？？？
+                                </p>
+                                <ul class="mt20 clearfix">
+                                    <li class="fl">
+                                        <span >2015-07-02</span>
+                                    </li>
+                                    <li class="fr">
+                                        <span>收起</span>
+                                    </li>
+                                    <li class="fr mr20">
+                                        <span class="css_sprite"></span>
+                                        <span>0</span>
+                                    </li>
+                                </ul>
+                                <div class="reply mt10 clearfix">
+                                    <div>
+                                        <textarea class="h100" placeholder="我也说一句"></textarea>
+                                    </div>
+                                    <div class="reply_icon_selector">
+                                        <span class="css_sprite reply_icon"></span>
+                                    </div>
+                                    <div>
+                                        <div class="reply_bt fr" href="">回复</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="comment_item">
+                            <div class="comment_user_name clearfix">
+                                <a class="fl" href="">
+                                    <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
+                                <div class="fl">ACE-0428</div>
+                                <div class="fr">举报</div>
+                            </div>
+                            <div class="comment_content">
+                                <p>
+                                    沙发啊！！po主~~做蛋糕时里面的奶粉能换成 豆奶粉吗 ？总统牌的奶酪（小孩补钙直接吃的）能不能用来做芝士蛋糕？？？？？？？？？？？？？
+                                </p>
+                                <ul class="mt20 clearfix">
+                                    <li class="fl">
+                                        <span >2015-07-02</span>
+                                    </li>
+                                    <li class="fr">
+                                        <span>收起</span>
+                                    </li>
+                                    <li class="fr mr20">
+                                        <span class="css_sprite"></span>
+                                        <span>0</span>
+                                    </li>
+                                </ul>
+                                <div class="reply mt10 clearfix">
+                                    <div class="none">
+                                        <textarea class="h100" placeholder="我也说一句"></textarea>
+                                    </div>
+                                    <div class="reply_icon_selector none">
+                                        <img src="">
+                                    </div>
+                                    <ul class="comment_list clearfix">
+                                        <li class="comment_item">
+                                            <div class="comment_user_name clearfix">
+                                                <a class="fl" href="">
+                                                    <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
+                                                <div class="fl">ACE-0428</div>
+                                                <div class="fr">举报</div>
+                                            </div>
+                                            <div class="comment_content">
+                                                <p>
+                                                    沙发啊！！po主~~做蛋糕时里面的奶粉能换成 豆奶粉吗 ？总统牌的奶酪（小孩补钙直接吃的）能不能用来做芝士蛋糕？？？？？？？？？？？？？
+                                                </p>
+                                                <ul class="mt20 clearfix">
+                                                    <li class="fl">
+                                                        <span >2015-07-02</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="comment_item">
+                                            <div class="comment_user_name clearfix">
+                                                <a class="fl" href="">
+                                                    <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
+                                                <div class="fl">ACE-0428</div>
+                                                <div class="fr">举报</div>
+                                            </div>
+                                            <div class="comment_content">
+                                                <p>
+                                                    沙发啊！！po主~~做蛋糕时里面的奶粉能换成 豆奶粉吗 ？总统牌的奶酪（小孩补钙直接吃的）能不能用来做芝士蛋糕？？？？？？？？？？？？？
+                                                </p>
+                                                <ul class="mt20 clearfix">
+                                                    <li class="fl">
+                                                        <span >2015-07-02</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="comment_item">
+                                            <div class="comment_user_name clearfix">
+                                                <a class="fl" href="">
+                                                    <img src="https://cnodejs.org/agent?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F9922169%3Fv%3D3%26s%3D120"></a>
+                                                <div class="fl">ACE-0428</div>
+                                                <div class="fr">举报</div>
+                                            </div>
+                                            <div class="comment_content">
+                                                <p>
+                                                    沙发啊！！po主~~做蛋糕时里面的奶粉能换成 豆奶粉吗 ？总统牌的奶酪（小孩补钙直接吃的）能不能用来做芝士蛋糕？？？？？？？？？？？？？
+                                                </p>
+                                                <ul class="mt20 clearfix">
+                                                    <li class="fl">
+                                                        <span >2015-07-02</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="comment_content clearfix" style="border-bottom:none;">
+                                            <p class="data_page fl">
+                                                <span class="page_current">
+                                                    <a href="javascript:;">1</a>
+                                                </span>
+                                                <span>
+                                                    <a href="javascript:toPage(2);">2</a>
+                                                </span>
+                                                <span>
+                                                    <a href="javascript:toPage(3);">3</a>
+                                                </span>
+                                                <span class="page_next">
+                                                    <a href="javascript:toPage(2);">下一页</a>
+                                                </span>
+                                                <span class="page_next">
+                                                    <a href="javascript:toPage(2);">尾页</a>
+                                                </span>
+                                            </p>
+                                            <div class="reply_bt fr" href="">回复</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <div class="comment_content">
+                            <p class="data_page reply_check_more mt20">     
+                                <a href="#" style="color:#666666;">查看更多评论内容</a>            
+                            </p>
+                        </div>
+                    </ul>
+                    <div class="reply_bottom clearfix mt50">
+                        <textarea class="h200"></textarea>
+                        <div class="reply_icon_selector">
+                            <span class="css_sprite reply_icon"></span>
+                        </div>
+                        <div class="reply_bt fr" href="">回复</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
